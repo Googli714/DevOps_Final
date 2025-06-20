@@ -10,6 +10,7 @@ import os
 from prometheus_fastapi_instrumentator import Instrumentator
 from prometheus_client import Counter, Histogram, Gauge, generate_latest
 import time
+from fastapi import Request
 
 load_dotenv("../")
 
@@ -71,6 +72,15 @@ todo_completed_counter = Counter('todos_completed_total', 'Total number of todos
 todo_deleted_counter = Counter('todos_deleted_total', 'Total number of todos deleted')
 active_todos_gauge = Gauge('todos_active', 'Number of active todos')
 request_duration = Histogram('http_request_duration_seconds', 'HTTP request duration')
+
+# Middleware to measure request duration
+@app.middleware("http")
+async def add_request_timing(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    duration = time.time() - start_time
+    request_duration.observe(duration)
+    return response
 
 # Initialize Prometheus instrumentator
 instrumentator = Instrumentator()
