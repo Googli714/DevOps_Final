@@ -4,11 +4,11 @@
 
 Before fixing vulnerabilities
 
-![image-20250620201614338](/home/churchin/.config/Typora/typora-user-images/image-20250620201614338.png)
+![before](/screenshots/vuln-before.png)
 
 After fixing vulnerabilities:
 
-![image-20250620204833587](/home/churchin/.config/Typora/typora-user-images/image-20250620204833587.png)
+![after](/screenshots/vuln-after.png)
 
 Some of the vulnerabilities were fixed by changing the image version to newer one, but some required Dockerfile changes, for example frontend and backend need their Dockerfiles changed so that use less privileged user to run the actual backend/frontend. Unfortunately Postgres has many issues which are not easily fixable, I changed the image version to fix some vulnerabilities but some are still present. (Recommend solutions include: 1, Wait for new image version where vulnerabilities are fixed 2. Research ways to fix the vulnerabilities and implement them).
 
@@ -103,7 +103,7 @@ docker pause todo_backend
 
 
 
-![image-20250620210217605](/home/churchin/.config/Typora/typora-user-images/image-20250620210217605.png)
+![incident](/screenshots/incident.png)
 
 As we can see when backend is killed/paused the frontends requests don't get a response since backend is paused
 
@@ -111,8 +111,8 @@ As we can see when backend is killed/paused the frontends requests don't get a r
 
 ## Prometheus + Grafana
 
-![image-20250620210915716](/home/churchin/.config/Typora/typora-user-images/image-20250620210915716.png)
+![prometheus](/screenshots/prometheus.png)
 
-![image-20250620211006767](/home/churchin/.config/Typora/typora-user-images/image-20250620211006767.png)
+![grafana-1](/screenshots/grafana-1.png)
 
-![image-20250620211856245](/home/churchin/.config/Typora/typora-user-images/image-20250620211856245.png)
+![grafana-2](/screenshots/grafana-2.png)

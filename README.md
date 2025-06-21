@@ -19,7 +19,6 @@ This project demonstrates a complete DevOps pipeline with:
 - ✅ Mark todos as complete/incomplete
 - ✅ Real-time metrics collection
 - ✅ Responsive and animated UI
-- ✅ CORS-enabled API for cross-origin requests
 
 ### DevOps Features
 - 🔒 **Security-first approach** with Alpine-based containers
@@ -27,7 +26,6 @@ This project demonstrates a complete DevOps pipeline with:
 - 🛡️ **Vulnerability scanning** with Trivy security reports
 - 🐳 **Containerized deployment** with Docker Compose
 - 📈 **Custom metrics** for business logic monitoring
-- 🔍 **Health checks** and service dependencies
 
 ## 🛠️ Tech Stack
 
@@ -39,13 +37,6 @@ This project demonstrates a complete DevOps pipeline with:
 | **Monitoring** | Prometheus, Grafana, Node Exporter |
 | **Security** | Trivy scanner, Alpine base images |
 | **Orchestration** | Docker, Docker Compose |
-
-## 📋 Prerequisites
-
-- Docker Engine 20.0+
-- Docker Compose 2.0+
-- 4GB+ RAM available
-- Ports 3000, 8000, 5432, 9090, 9100, 3001 available
 
 ## 🚀 Quick Start
 
@@ -70,7 +61,7 @@ This project demonstrates a complete DevOps pipeline with:
    - **Todo App**: http://localhost:3000
    - **API Docs**: http://localhost:8000/docs
    - **Prometheus**: http://localhost:9090
-   - **Grafana**: http://localhost:3001 (admin/admin)
+   - **Grafana**: http://localhost:3001
 
 ## 🏃‍♂️ Development
 
@@ -138,7 +129,7 @@ Pre-configured dashboards available:
 - **Todo Application Dashboard**: Business metrics and API performance
 - **System Monitoring Dashboard**: Infrastructure metrics (CPU, memory, disk)
 
-Access Grafana at http://localhost:3001 with credentials `admin/admin`.
+Access Grafana at http://localhost:3001 with credentials that you create in ```.env``` file
 
 ## 🔒 Security
 
